@@ -153,14 +153,14 @@
             <div class="modal-body p-5 pt-0">
               <form class="g-3 needs-validation" novalidate>
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                  <input type="email" class="form-control rounded-3" id="usuario" placeholder="name@example.com">
                   <label for="floatingInput">Email address</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                  <input type="password" class="form-control rounded-3" id="senha" placeholder="Password">
                   <label for="floatingPassword">Password</label>
                 </div>
-                <a class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" href="../Dashboard/control.html">Logar</a>
+                <a class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" id="btnLogar" onclick="logar()">Logar</a>
                 <a class="icon-link icon-link-hover" style="--bs-icon-link-tranform: translate3d(0, -.125rem, 0)" href="../valor/valor.html">
                   <svg class="bi" aria-hidden="true"><use xlink:href="#cadastro"></svg>
                   Cadastre-se aqui
@@ -190,7 +190,51 @@
 
     <script>
 
-     
+      const usuario = [
+        {
+          login: 'luis',
+          pass: 'luis'
+        },
+        {
+          login: 'enzo',
+          pass: 'enzo'
+        },
+        {
+          login: 'brenno',
+          pass: 'brenno'
+        },
+        {
+          login: 'gustavo',
+          pass: 'gustavo'
+        },
+        {
+          login: 'convidado',
+          pass: 'convidado'
+        }
+
+      ]
+
+      let botao = document.getElementById('btnLogar');
+
+      botao.addEventListener('click', function logar(){
+        let pegaUsuario = document.getElementById('usuario').value 
+        let pegaSenha = document.getElementById('senha').value
+        let validaLogin = false
+
+        for (let i in usuario){
+
+          if(pegaUsuario == usuario[i].login && pegaSenha == usuario[i].pass){
+            validaLogin = true
+            break
+          }
+        }
+
+        if(validaLogin == true){
+          location.href = '../Dashboard/control.html'
+        }else{
+          alert('Usuario e senha incorreta!')
+        }
+      }) 
 
 
     </script>
