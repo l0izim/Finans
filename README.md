@@ -1,3 +1,7 @@
-PAGAMENTO/index.html funciona, mas nao esta indo no vercel // ARRUMADO
+### planejamentos futuros
 
 vou comeca a fazer outro Dashboard mas pra adicionar patrimonios
+
+### Atualizacoes:
+
+melhoria no visual
